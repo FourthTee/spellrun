@@ -38,7 +38,7 @@ classifier.add(Dense(units = 1, activation = 'sigmoid' ))
 #optimizer: choose stochastic gradient descent algorithm
 #loss: choose loss function
 #metrics: performance metric
-classifier.compile(optimizer = 'adam', loss = 'binary_crossentßßropy', metrics = ['accuracy'])
+classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 #preprocessing data to prevent  overfitting
 train_datagen = ImageDataGenerator(rescale = 1./255,
