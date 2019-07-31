@@ -30,11 +30,10 @@ classifier.add(Flatten())
 
 #create fully connected layer
 #units is the number of nodes in this layer <input, output>
-classifier.add(Dense(units = 128, activation = 'relu'))
+classifier.add(Dense(units = 128, activation = 'relu')
 
 #initialise output layer
-classifier.add(Dense(units = 1, activation = 'sigmoid'))
-
+classifier.add(Dense(units = 1, activation = 'sigmoid' ))
 #compile
 #optimizer: choose stochastic gradient descent algorithm
 #loss: choose loss function
@@ -42,7 +41,6 @@ classifier.add(Dense(units = 1, activation = 'sigmoid'))
 classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 #preprocessing data to prevent  overfitting
-from keras.preprocessing.image import ImageDataGenerator
 train_datagen = ImageDataGenerator(rescale = 1./255,
 shear_range = 0.2,
 zoom_range = 0.2,
@@ -67,7 +65,7 @@ validation_steps = 2000)
 #making new predictions
 import numpy as np
 from keras.preprocessing import image
-test_image = image.load_img('dataset/single_prediction/cat_or_dog_1.jpg', target_size = (64, 64))
+test_image = image.load_img('test_image/cat_test.jpg', target_size = (64, 64))
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis = 0)
 result = classifier.predict(test_image)
