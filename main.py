@@ -40,7 +40,7 @@ classifier.add(Dense(units = 1, activation = 'sigmoid' ))
 #metrics: performance metric
 classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
-#preprocessing data to prevent  overfitting
+#preprocessing data to prevent overfitting
 from keras.preprocessing.image import ImageDataGenerator
 
 train_datagen = ImageDataGenerator(rescale = 1./255,
@@ -77,4 +77,4 @@ if result[0][0] == 1:
 else:
     prediction = 'cat'
 
-print(prediction)
+print('This is a'+prediction+'!')
